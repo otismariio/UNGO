@@ -1,4 +1,10 @@
+"use client"
+
+import { useState } from "react";
+import DonateButton from "./DonateButton";
+
 export default function FinalCTA() {
+  const [ open, setOpen ] = useState(false)
   return (
     <section className="bg-cream py-24">
       <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
@@ -10,15 +16,14 @@ export default function FinalCTA() {
           contribution goes directly to a project you can track.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#donate"
-            className="rounded-full bg-terracotta px-8 py-4 font-semibold text-cream transition hover:bg-terracotta-dark"
-          >
-            Donate Now
-          </a>
+          <DonateButton
+            size="sm"
+            className="mt-2 w-48 justify-center px-7 py-5"
+            onClick={() => setOpen(false)}
+          />
           <a
             href="#"
-            className="rounded-full border border-ink/20 px-8 py-4 font-semibold text-ink transition hover:border-ink/40"
+            className="rounded border border-ink/20 px-8 py-4 font-semibold text-ink transition hover:border-ink/40"
           >
             Partner With Us
           </a>
