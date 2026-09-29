@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import SectionTabs from "@/components/SectionTabs";
 import ContentSection from "@/components/ContentSection";
+import MissionVisionValues from "@/components/MissionVisionValues";
 import { aboutNav } from "@/lib/nav-data";
 
 const tabs = aboutNav.items.map((item) => ({
@@ -22,20 +23,25 @@ export default function AboutPage() {
       />
       <SectionTabs pageLabel="About Us" tabs={tabs} />
 
-      <ContentSection
+      <MissionVisionValues
         id="mission-vision-values"
-        eyebrow="What Guides The Work"
-        title="Mission, Vision & Values"
-        paragraphs={[
-          "Our mission is to close the infrastructure gap that keeps rural communities from participating in the digital and economic opportunities everyone else takes for granted.",
-          "We believe access should be co-owned, not delivered. Every project is built with the community that will run it long after we've moved on.",
+        title="Mission, vision and values"
+        mission={{
+          heading: "Our mission",
+          text: "To empower vulnerable women, single mothers, and youth in Uganda through vocational skills training, education, nutrition, childcare, and psychosocial support, enabling families to achieve self‑reliance and long‑term stability.",
+        }}
+        vision={{
+          heading: "Our vision",
+          text: "Communities where women and youth are economically independent, children are safe and educated, and families thrive with dignity and hope.",
+        }}
+        valuesHeading="Values"
+        values={[
+          { icon: "equity", title: "Equity" },
+          { icon: "impact", title: "Practical impact" },
+          { icon: "community", title: "Community partnership" },
+          { icon: "accountability", title: "Accountability" },
+          { icon: "sustainability", title: "Sustainability" },
         ]}
-        bullets={[
-          "Community ownership from day one",
-          "Transparency in every dollar spent",
-          "Long-term presence over one-time drops",
-        ]}
-        image="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=900&auto=format&fit=crop"
       />
 
       <ContentSection
