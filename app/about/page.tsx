@@ -34,13 +34,34 @@ export default function AboutPage() {
           heading: "Our vision",
           text: "Communities where women and youth are economically independent, children are safe and educated, and families thrive with dignity and hope.",
         }}
-        valuesHeading="Values"
+        valuesHeading="Our Values"
         values={[
-          { icon: "equity", title: "Equity" },
-          { icon: "impact", title: "Practical impact" },
-          { icon: "community", title: "Community partnership" },
-          { icon: "accountability", title: "Accountability" },
-          { icon: "sustainability", title: "Sustainability" },
+          {
+            icon: "check",
+            title: "Human Dignity",
+            description: "Every person deserves opportunity, safety, and respect.",
+          },
+          {
+            icon: "check",
+            title: "Holistic Care",
+            description:
+              "Sustainable change addresses economic, emotional, and family needs together.",
+          },
+          {
+            icon: "check",
+            title: "Empowerment",
+            description: "Skills and knowledge are pathways to independence.",
+          },
+          {
+            icon: "check",
+            title: "Compassion",
+            description: "We respond to vulnerability with empathy and action.",
+          },
+          {
+            icon: "check",
+            title: "Community",
+            description: "Strong families build resilient communities.",
+          },
         ]}
       />
 
@@ -61,8 +82,10 @@ export default function AboutPage() {
         eyebrow="How Access Becomes Opportunity"
         title="Theory of Change"
         paragraphs={[
-          "Infrastructure alone doesn't change outcomes, it has to be paired with training, maintenance, and local ownership to actually get used.",
-          "That's why every well, classroom, and clinic we fund comes with a multi-year handover plan built around the people who'll depend on it.",
+          "If CHS provides vulnerable single mothers and youth with daily nutrition, childcare, primary education, sexual education, psychosocial support, and comprehensive vocational skills training aligned with market needs…",
+          "AND equips graduates with entrepreneurship training, financial literacy to launch microbusinesses…",
+          "THEN women will gain employable skills, start small enterprises, earn income, and care for their children, while children receive consistent nutrition and education in a safe environment…",
+          "SO THAT families break cycles of poverty, reduce crisis-driven harm, and build stable, resilient, and empowered futures across generations.",
         ]}
         image="https://images.unsplash.com/photo-1497486751825-1233686d5d80?q=80&w=900&auto=format&fit=crop"
       />
