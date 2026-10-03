@@ -1,3 +1,6 @@
+import Link from "next/link";
+import DonateButton from "./DonateButton";
+
 type TextBlock = {
   heading: string;
   text: string;
@@ -7,6 +10,12 @@ type ValueItem = {
   icon: "check";
   title: string;
   description?: string;
+};
+
+type DivideBlock = {
+  title: string;
+  paragraphs: string[];
+  image: string;
 };
 
 const icons: Record<ValueItem["icon"], React.ReactNode> = {
@@ -25,6 +34,9 @@ type MissionVisionValuesProps = {
   vision: TextBlock;
   valuesHeading: string;
   values: ValueItem[];
+  goalsTitle?: string;
+  goals?: string[];
+  divideBlock?: DivideBlock;
 };
 
 export default function MissionVisionValues({
@@ -34,6 +46,9 @@ export default function MissionVisionValues({
   vision,
   valuesHeading,
   values,
+  goalsTitle,
+  goals,
+  divideBlock,
 }: MissionVisionValuesProps) {
   return (
     <section id={id} className="scroll-mt-32 border-b border-ink/5 bg-cream py-20">
@@ -75,6 +90,47 @@ export default function MissionVisionValues({
             ))}
           </div>
         </div>
+
+        {goals && goals.length > 0 && (
+          <div className="mt-14 border-2 border-ink p-8 md:p-10">
+            {goalsTitle && (
+              <h3 className="font-display text-2xl text-ink">{goalsTitle}</h3>
+            )}
+            <div className="mt-6 divide-y divide-ink/10">
+              {goals.map((goal, i) => (
+                <div key={goal} className="flex items-start gap-4 py-4">
+                  <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 border-terracotta text-sm font-bold text-terracotta">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="pt-1 text-ink/80">{goal}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {divideBlock && (
+          <div className="mt-14 grid grid-cols-1 items-center gap-10 border-2 border-ink p-8 md:grid-cols-2 md:p-10">
+            <div className="overflow-hidden border-2 border-ink">
+              <img
+                src={divideBlock.image}
+                alt={divideBlock.title}
+                className="h-72 w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl text-ink md:text-3xl">
+                {divideBlock.title}
+              </h3>
+              {divideBlock.paragraphs.map((p, i) => (
+                <p key={i} className="mt-4 text-sm text-ink/70">
+                  {p}
+                </p>
+              ))}
+              <DonateButton size="sm" className="mt-6" />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

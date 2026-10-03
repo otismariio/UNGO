@@ -61,11 +61,6 @@ export const whatWeDoNav: NavGroup = {
       anchor: "what-we-prioritize",
       img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=300&auto=format&fit=crop",
     },
-    {
-      title: "Success Stories",
-      anchor: "success-stories",
-      img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=300&auto=format&fit=crop",
-    },
   ],
 };
 

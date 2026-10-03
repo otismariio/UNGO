@@ -6,6 +6,7 @@ import ContentSection from "@/components/ContentSection";
 import MissionVisionValues from "@/components/MissionVisionValues";
 import TeamGrid from "@/components/TeamGrid";
 import { aboutNav } from "@/lib/nav-data";
+import HistoryTimeline from "@/components/HistoryTimeline";
 
 const tabs = aboutNav.items.map((item) => ({
   label: item.title,
@@ -64,18 +65,84 @@ export default function AboutPage() {
             description: "Strong families build resilient communities.",
           },
         ]}
+        goalsTitle="Goals"
+        goals={[
+          "Ensure rural students acquire essential computer skills.",
+          "Enable farmers to access fair markets through information.",
+          "Improve efficiency and care quality in rural healthcare facilities.",
+          "Reduce internet cost barriers for underserved institutions.",
+          "Scale sustainable, community-run skills and access programs.",
+        ]}
+        divideBlock={{
+          title: "Closing the digital divide in underserved communities",
+          paragraphs: [
+            "Commonwell Trust is an international charity helping to close the infrastructure gap in underserved communities by installing affordable digital literacy training across education, agriculture, and healthcare.",
+            "More than 500 inspected & verified schools currently await assistance. Help us reach the next one.",
+          ],
+          image:
+            "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=900&auto=format&fit=crop",
+        }}
       />
 
-      <ContentSection
+      <HistoryTimeline
         id="history"
-        eyebrow="From 2011 To Today"
-        title="History"
-        paragraphs={[
-          "Commonwell Trust began with a single well, funded by a small group of engineers who'd spent a summer volunteering abroad and came home determined to keep going.",
-          "Fourteen years later, that same instinct. Build it, hand it over, keep showing up, still shapes every project we take on.",
+        title="Our History"
+        intro="Commonwell Trust was founded in 2011 by a small group of engineers in Canada. Today, it operates across four countries, delivering infrastructure access and digital literacy training."
+        milestones={[
+          {
+            year: "2025",
+            description:
+              "Commonwell Trust reaches a major milestone: over 320 sites now active, with hundreds more institutions on the waitlist.",
+          },
+          {
+            year: "2024",
+            description:
+              "Site maintenance protocols formalized. Negotiates a bulk pricing agreement with hardware vendors to cut delivery costs and keep technician turnaround sustainable for long-term maintenance.",
+          },
+          {
+            year: "2023",
+            description:
+              "34 new sites added. Over 50,000 more students are enabled to complete high school. All project outcomes now include post-installation monitoring.",
+          },
+          {
+            year: "2022",
+            description:
+              "Digital connectivity provided to 34 sites. Site plan receives a multi-year grant from a major regional development fund.",
+          },
+          {
+            year: "2016",
+            description:
+              "Installed 4 new systems: our 4th high school, 1st medical clinic, 9th farmer co-op and 1st credit union. Total of 11 operating systems.",
+          },
+          {
+            year: "2015",
+            description:
+              "Installed more than 15 mini-computer labs at schools and farmer co-ops. The latter enabled farmers to become computer literate, effectively market produce and even diagnose and treat crop disease.",
+          },
+          {
+            year: "2011",
+            description:
+              "A field technician approached Commonwell Trust to install a demonstration mini-lab system at schools and farmer co-ops in Uganda. By year end, Robert Porter and the team had become fully operational in Uganda.",
+          },
+          {
+            year: "2009",
+            description:
+              "Commonwell Trust is formalized as a registered charity in Canada, distributing highly compressed hardware and browsing programs to rural and humanitarian beneficiaries.",
+          },
+          {
+            year: "2007",
+            description:
+              "Commonwell Trust operated an HF radio e-mail system with its first base of operations. Several systems were also tracked at a music program in a nearby country.",
+          },
+          {
+            year: "2004",
+            description:
+              "Rob Porter is sponsored by his local Rotary Club to fund the installation of a demonstration HF radio e-mail system for a rural medical clinic overseas.",
+          },
         ]}
-        image="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=900&auto=format&fit=crop"
-        reverse
+        closingText="Over time, Commonwell Trust evolved from simply donating computers to building affordable, sustainable infrastructure supported by training, connectivity regulations, and local capacity building. Today, the model delivers multi-sector digital access across education, agriculture, and healthcare. Demand continues to outpace available funding, with 500+ institutions on waiting lists across the region."
+        ctaLabel="Learn How You Can Support Our Mission"
+        ctaHref="/support"
       />
 
       <ContentSection
